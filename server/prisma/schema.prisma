@@ -12,7 +12,7 @@ datasource db {
 
 model User {
   id Int @default(autoincrement()) @id
-  login String?
+  login String? @unique
   node_id String?
   avatar_url String?
   gravatar_id String?
