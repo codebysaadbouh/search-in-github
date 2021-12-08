@@ -15,7 +15,7 @@ app.get('/users', async (req, res) => {
     const users = await prisma.user.findMany()
     res.json(users)
   })
-// 
+
 
 // * GET ALL USER BY LOGIN : 
 app.get(`/user/:username`, async (req, res) => {
@@ -25,19 +25,6 @@ app.get(`/user/:username`, async (req, res) => {
   })
   res.json(user)
 })
-
-/**
- * * CREATE USER :
- * @param req.body Provide the data to be saved in Json format
- */
- app.post(`/user`, async (req, res) => {
-  const result = await prisma.user.create({
-    data: { ...req.body },
-  })
-  res.json(result)
-})
-
-
 
 
 /**
