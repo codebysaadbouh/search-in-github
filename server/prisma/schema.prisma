@@ -11,14 +11,15 @@ datasource db {
 }
 
 model User {
-  id Int @default(autoincrement()) @id
   login String @unique
+  id Int @default(autoincrement()) @id
   node_id String?
   avatar_url String?
   gravatar_id String?
   url String?
   html_url String?
   followers_url String?
+  following_url String?
   gists_url String?
   starred_url String?
   subscriptions_url String?
@@ -41,5 +42,5 @@ model User {
   followers Int?
   following Int?
   created_at DateTime?
-  update DateTime?
+  updated_at DateTime?
 }
