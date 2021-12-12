@@ -38,15 +38,14 @@ export const getUserFromGithub = async (req: Request, res: Response, next: NextF
   const github_login  = String(login)
   
   const user = await prisma.user.findUnique({
-    where: { login: String(github_login) },
+    where: { login: github_login },
     })
 
   if( user!= null) {
-    console.log(user); 
+    // console.log(user);
     res.json(user)
   }
-
-  else{
+  else {
     const client_credentials = btoa(process.env.GITHUB_USERNAME+':'+process.env.PERSONAL_ACCESS_TOKEN)
     try {
       const response = await axios.get(`https://api.github.com/users/${github_login}`, { 
