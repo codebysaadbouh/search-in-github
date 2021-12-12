@@ -121,8 +121,8 @@ export default function SplashScreen() {
                     justifyContent: 'center',
                 }}>
                     <Animated.Image source={Logo} style={{
-                        height: 150,
-                        width: 150,
+                        height: 180,
+                        width: 180,
                         marginBottom: 35,
                         transform: [
                             { translateX: moveLogo.x },
